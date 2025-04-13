@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lizzie's Corner</title>
+  <style>
+    /* Global reset and box-sizing for consistency */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+      background-color: #3a77b5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background image with animation */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('res/bgnew.jpg') center/cover no-repeat;
+      opacity: 0.75;
+      z-index: -1;
+      animation: scale 3s infinite;
+    }
+
+    @keyframes scale {
+      0%, 100% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Container for the content */
+    .link-page {
+      background: #fff;
+      border-radius: 10px 50px 10px 50px;
+      box-shadow: 0 4px 8px #5a64ac;
+      padding: 25px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      margin: 20px;
+    }
+
+    /* Profile picture and glow effect */
+    .profile-pic {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .profile-pic img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-glow {
+      position: absolute;
+      width: 155px;
+      height: 155px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgb(90, 100, 172) 0%, rgb(178, 120, 179) 75%);
+      animation: rotate 3s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 1.75rem;
+      color: #3a78b6;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 1rem;
+      font-style: italic;
+      color: #689cbe;
+      margin: 20px 0;
+    }
+
+    /* Navigation links */
+    a {
+      display: block;
+      background: #3a78b6;
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      margin: 12px 0;
+      border-radius: 8px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    a:hover {
+      background: #b379b3;
+      transform: scale(1.1) translateY(-5px);
+    }
+
+    a span {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    a:hover span {
+      opacity: 1;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.9rem;
+        margin: 15px;
+      }
+      .profile-pic img {
+        width: 120px;
+        height: 120px;
+      }
+      .profile-glow {
+        width: 125px;
+        height: 125px;
+      }
+      .link-page {
+        padding: 20px;
+      }
+      a {
+        padding: 12px;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="link-page">
+    <div class="profile-pic">
+      <div class="profile-glow"></div>
+      <img src="res/nana_new.png" alt="Lizzie Profile" />
+    </div>
+
+    <h1>★ Elizabet Tsutsova ★</h1>
+    <p>"I put the <strong>fun</strong> in <strong>dysfunctional</strong>"</p>
+
+    <a href="https://github.com/b3ths1"><span>★ </span>GitHub<span> ★</span></a>
+    <a href="https://www.instagram.com/b3ths1/"><span>★ </span>Instagram<span> ★</span></a>
+    <a href="https://github.com/b3ths1/SoulChaser"><span>★ </span>SoulChaser<span> ★</span><br><sub>Concept Art</sub></a>
+    <a href=""><span>★ </span>SoulChaser<span> ★</span><br><sub>LookBook version</sub></a>
+  </div>
+</body>
+</html>
